@@ -10,12 +10,73 @@ Note: this is a Cloudflare Quick Tunnel to the local demo server. If the tunnel
 or local app quits, restart the local Next app and tunnel using the commands in
 the project README or the restart notes from the working session.
 
+Demo access:
+
+- No login is required.
+- No real patient data should be entered.
+- If the public tunnel returns a Cloudflare `530` or connection error, the app is
+  not intentionally gated; the temporary tunnel expired and should be restarted.
+- Local fallback for judges or reviewers: run the app on `http://127.0.0.1:3000`
+  and use the same demo flow.
+
 ## One-Line Pitch
 
 Health Navigator turns a structured new-diagnosis profile into a practical,
 doctor-ready care navigation packet with appointment questions, evidence-backed
 nutrition and movement guidance, insurance steps, support resources, source
 citations, and safety labels.
+
+## Judge Quick Scan
+
+User:
+
+Newly diagnosed breast cancer patients and caregivers preparing for the first
+oncology appointment.
+
+Buyer:
+
+Director of oncology patient navigation, VP of patient experience, breast
+oncology program leader, payer oncology case-management leader, employer
+benefits leader, or cancer advocacy organization.
+
+Reachable community:
+
+Nurse navigators, oncology social workers, breast cancer patient educators,
+dietitians, financial counselors, and survivorship/supportive-care teams. These
+roles already help patients turn a new diagnosis into practical next steps.
+
+Why this market is reachable:
+
+- Cancer centers and breast oncology programs already run patient education and
+  navigation workflows.
+- NCI lists 74 NCI-Designated Cancer Centers across 37 states and DC.
+- CoC says nearly 1,400 US hospitals and cancer centers are accredited.
+- Breast cancer is a focused beachhead with a repeatable diagnosis-to-first-visit
+  workflow.
+
+Concrete scope:
+
+- ACS estimates about 321,910 new invasive breast cancer cases in women in the
+  US in 2026.
+- ACS also estimates about 60,730 new DCIS cases in 2026.
+- ACS reports more than 4 million breast cancer survivors in the US.
+
+Expected KPI:
+
+Reduce time from scattered research to a visit-ready packet to under 5 minutes,
+while producing a complete packet with diagnosis confirmation questions,
+insurance checks, supportive-care guidance, source citations, and clinician
+verification labels.
+
+Before and after:
+
+| Before Health Navigator | After Health Navigator |
+| --- | --- |
+| Search subtype, stage, treatment, survival, and side-effect terms across many tabs. | Enter one structured diagnosis profile. |
+| Read generic handouts that do not reflect insurance, constraints, language, baseline diet, movement, or support needs. | Generate a tailored navigation packet from the profile. |
+| Call insurance without knowing which network, referral, authorization, or cost questions matter. | Bring a focused insurance and cost checklist. |
+| Ask social groups what to ask the doctor. | Bring source-backed provider questions to the appointment. |
+| Arrive with scattered phone notes. | Print or copy an appointment-ready handout. |
 
 ## Target User
 
@@ -59,6 +120,8 @@ Hackathon proof point:
   questions in the current sample flow.
 - Every demo plan item is typed, source-attached, and safety-checked before it
   is shown.
+- The public demo requires no login and can be verified by loading the sample
+  profile, generating the packet, and opening the appointment export view.
 
 Expected pilot KPIs:
 
@@ -89,16 +152,28 @@ Reachable care-delivery wedge:
   37 states and the District of Columbia.
 - The American College of Surgeons Commission on Cancer says nearly 1,400 US
   hospitals and cancer centers are CoC-accredited.
+- These organizations already have patient navigation, financial counseling,
+  social work, dietitian, survivorship, and patient education teams.
 - This makes the reachable first buyer a breast oncology program, cancer center,
   patient navigation team, payer case-management group, employer benefits team,
   or patient advocacy organization.
 
 Beachhead buyer:
 
-Cancer centers and oncology navigation programs are the best first buyer because
-they already own the workflow of helping newly diagnosed patients prepare for
-visits, understand next steps, and connect to social work, nutrition,
-transportation, insurance, and survivorship resources.
+Cancer centers and oncology navigation programs are the best first buyer. The
+economic buyer is typically a cancer center service-line leader, navigation
+leader, patient-experience leader, or payer oncology case-management leader. The
+day-to-day champion is the nurse navigator or oncology social worker who wants a
+repeatable way to help patients prepare for first visits.
+
+Why they would adopt:
+
+- Patient navigators are already asked to help newly diagnosed patients prepare
+  for appointments and understand next steps.
+- A standardized packet can reduce repeated education work and make handoffs to
+  doctors, social work, dietitians, financial counselors, and caregivers cleaner.
+- The first version can run as sample-only education content before any HIPAA
+  production rollout.
 
 Adoption path:
 
@@ -196,6 +271,28 @@ workflow: structured diagnosis context becomes a usable care-navigation packet."
 an hour of scattered research to under five minutes, while increasing the number
 of relevant provider questions and insurance checks a patient brings to the
 visit."
+
+## Verification Notes For Judges
+
+The demo is intentionally sample-only, but it should not be access-gated.
+
+Public verification path:
+
+1. Open the current public URL.
+2. Click `Load sample profile`.
+3. Click `Generate plan`.
+4. Confirm the packet shows sections and sources.
+5. Open `Appointment packet`.
+6. Confirm `Print / Save PDF` and `Copy packet text` are visible.
+
+If public access fails:
+
+- Cloudflare Quick Tunnel links are temporary.
+- A Cloudflare `530`, connection timeout, or browser warning means the tunnel
+  has expired or the local device is offline.
+- Restart the local app and tunnel, then use the new URL printed by Cloudflare.
+- Local app command: `bun run dev --hostname 127.0.0.1`.
+- Tunnel command: `bunx --bun cloudflared@latest tunnel --url http://127.0.0.1:3000`.
 
 ## Architecture
 

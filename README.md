@@ -29,6 +29,18 @@ See [HACKATHON_SUBMISSION.md](HACKATHON_SUBMISSION.md) for the demo script,
 status-quo workflow, measurable KPI targets, market scope, buyer/user definition,
 rubric alignment, and repository evidence.
 
+Judge quick scan:
+
+- User: newly diagnosed breast cancer patients and caregivers.
+- Buyer: oncology navigation, cancer center patient experience, payer oncology
+  case management, employer benefits, or cancer advocacy organizations.
+- Market signal: ACS estimates about 321,910 new invasive breast cancer cases
+  in US women in 2026 and more than 4 million US breast cancer survivors.
+- Reachability: NCI lists 74 NCI-Designated Cancer Centers, and CoC says nearly
+  1,400 US hospitals and cancer centers are accredited.
+- KPI target: under 5 minutes from structured intake to printable appointment
+  packet.
+
 ## Local Development
 
 ```bash

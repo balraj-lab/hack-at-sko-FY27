@@ -4,7 +4,7 @@
 
 Current demo URL:
 
-https://chosen-hierarchy-convenient-eddie.trycloudflare.com/
+https://compensation-men-cocktail-feels.trycloudflare.com/
 
 Note: this is a Cloudflare Quick Tunnel to the local demo server. If the tunnel
 or local app quits, restart the local Next app and tunnel using the commands in

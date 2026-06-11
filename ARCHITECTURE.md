@@ -8,7 +8,7 @@ continues to run as a local Next.js server.
 
 Current public demo URL:
 
-https://chosen-hierarchy-convenient-eddie.trycloudflare.com/
+https://compensation-men-cocktail-feels.trycloudflare.com/
 
 ```mermaid
 flowchart LR
